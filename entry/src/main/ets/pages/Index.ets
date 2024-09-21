@@ -1,10 +1,15 @@
 import TabBar from '../view/TabBar'
+import { CommonConstant as Const } from '../common/constant/CommonConstant'
+
 @Entry
 @Component
 struct Index {
   build() {
-    Column(){
+    Column() {
       TabBar()
     }
+    .width(Const.FULL_WIDTH)
+    .backgroundColor($r('app.color.listColor'))
+    .justifyContent(FlexAlign.Center)
   }
 }

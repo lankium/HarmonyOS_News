@@ -1,9 +1,7 @@
-import NewsTypeModel from './NewsTypeModel';
-
 export default class ResponseResult {
   code: string;
-  msg: string | Resource
-  data: NewsTypeModel[] | string | Object | ArrayBuffer
+  msg: string | Resource;
+  data: string | Object | ArrayBuffer
 
   constructor() {
     this.code = ''

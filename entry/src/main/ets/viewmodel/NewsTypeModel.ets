@@ -1,4 +1,4 @@
-export default class NewsTypeModel{
-  id:number =0
-  name:ResourceStr = ''
+export default class NewsTypeModel {
+  id: number = 0
+  name: ResourceStr = ''
 }

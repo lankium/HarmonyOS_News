@@ -1,4 +1,5 @@
 // 封装一个用于发 http 请求的函数
+
 import { http } from '@kit.NetworkKit'
 import { CommonConstant as Const, ContentType } from '../constant/CommonConstant'
 import ResponseResult from '../../viewmodel/ResponseResult'
@@ -14,7 +15,9 @@ export function httpRequestGet(url: string) {
     connectTimeout: Const.HTTP_READ_TIMEOUT,
     extraData: {}
   })
+
   let serverData: ResponseResult = new ResponseResult()
+
   return responseResult.then((value) => {
     if (value.responseCode === Const.HTTP_CODE_200) {
       let result = `${value.result}`
@@ -25,8 +28,9 @@ export function httpRequestGet(url: string) {
       serverData.code = resultJson.code
       serverData.msg = resultJson.msg
     } else {
-      serverData.msg = `${$r('app.string.http_error_message')}&${value.responseCode}`
+      serverData.msg = `${$r('app.string.http_error_message')}&${value.responseCode}}`
     }
+
     return serverData
   }).catch(() => {
     serverData.msg = $r('app.string.http_error_message')
